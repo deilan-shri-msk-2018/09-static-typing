@@ -2,7 +2,7 @@
   "name": "09-strict-types",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.dev.js --port 3000 --open",
+    "build": "tsc",
     "lint": "tslint 'src/**/*.ts'"
   },
   "repository": {
