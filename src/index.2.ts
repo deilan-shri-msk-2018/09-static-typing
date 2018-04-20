@@ -42,6 +42,7 @@ export const extend: IExtendFunction = function extend(...args: any[]): object {
     i = 2;
   } else {
     deep = false;
+    target = arg0;
     i = 1;
   }
 

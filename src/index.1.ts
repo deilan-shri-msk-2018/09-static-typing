@@ -115,6 +115,7 @@ function extendInternal(...args: any[]): object {
     i = 2;
   } else {
     deep = false;
+    target = arg0;
     i = 1;
   }
 
@@ -138,7 +139,7 @@ function extendInternal(...args: any[]): object {
           } else {
             clone = src && isPlainObject(src) ? src : {};
           }
-          target[key] = extend(deep, clone, val);
+          target[key] = extendInternal(deep, clone, val);
         } else {
           target[key] = val;
         }
