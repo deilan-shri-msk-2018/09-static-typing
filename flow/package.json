@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "flow ./src",
+    "build": "babel ./src --out-dir ./dist"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-flow": "6.23.0",
+    "flow-bin": "0.70.0"
+  }
+}
