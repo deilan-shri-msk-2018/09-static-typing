@@ -1,0 +1,14 @@
+{
+  "name": "09-strict-types",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deilan-shri-msk-2018/08-architecture.git"
+  },
+  "author": "deilan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deilan-shri-msk-2018/08-architecture/issues"
+  },
+  "homepage": "https://github.com/deilan-shri-msk-2018/08-architecture#readme"
+}
