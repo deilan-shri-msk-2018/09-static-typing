@@ -28,79 +28,20 @@ export function isPlainObject(obj: any): boolean {
  * @returns {Object}
  */
 export const extend = extendInternal;
-function extendInternal<TObject>(deep: boolean, object: TObject): TObject;
-function extendInternal<TObject, TSource1>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-): TObject & TSource1;
-function extendInternal<TObject, TSource1>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-): TObject & TSource1;
-function extendInternal<TObject, TSource1, TSource2>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-): TObject & TSource1 & TSource2;
-function extendInternal<TObject, TSource1, TSource2, TSource3>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-): TObject & TSource1 & TSource2 & TSource3;
-function extendInternal<TObject, TSource1, TSource2, TSource3>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-): TObject & TSource1 & TSource2 & TSource3;
-function extendInternal<TObject, TSource1, TSource2, TSource3, TSource4>(
-  deep: boolean,
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-  source4: TSource4,
-): TObject & TSource1 & TSource2 & TSource3 & TSource4;
+
+function extendInternal<T0>(deep: boolean, object: T0): T0;
+function extendInternal<T0, T1>(deep: boolean, object: T0, source1: T1): T0 & T1;
+function extendInternal<T0, T1>(deep: boolean, object: T0, source1: T1): T0 & T1;
+function extendInternal<T0, T1, T2>(deep: boolean, object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+function extendInternal<T0, T1, T2, T3>(deep: boolean, object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+function extendInternal<T0, T1, T2, T3>(deep: boolean, object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
 function extendInternal(deep: boolean, ...args: object[]): object;
-function extendInternal<TObject>(object: TObject): TObject;
-function extendInternal<TObject, TSource1>(
-  object: TObject,
-  source1: TSource1,
-): TObject & TSource1;
-function extendInternal<TObject, TSource1>(
-  object: TObject,
-  source1: TSource1,
-): TObject & TSource1;
-function extendInternal<TObject, TSource1, TSource2>(
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-): TObject & TSource1 & TSource2;
-function extendInternal<TObject, TSource1, TSource2, TSource3>(
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-): TObject & TSource1 & TSource2 & TSource3;
-function extendInternal<TObject, TSource1, TSource2, TSource3>(
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-): TObject & TSource1 & TSource2 & TSource3;
-function extendInternal<TObject, TSource1, TSource2, TSource3, TSource4>(
-  object: TObject,
-  source1: TSource1,
-  source2: TSource2,
-  source3: TSource3,
-  source4: TSource4,
-): TObject & TSource1 & TSource2 & TSource3 & TSource4;
+function extendInternal<T0>(object: T0): T0;
+function extendInternal<T0, T1>(object: T0, source1: T1): T0 & T1;
+function extendInternal<T0, T1>(object: T0, source1: T1): T0 & T1;
+function extendInternal<T0, T1, T2>(object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+function extendInternal<T0, T1, T2, T3>(object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+function extendInternal<T0, T1, T2, T3>(object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
 function extendInternal(...args: object[]): object;
 function extendInternal(...args: any[]): object {
   const arg0: boolean | object = args[0];

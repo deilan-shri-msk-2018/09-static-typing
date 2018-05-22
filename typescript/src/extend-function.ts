@@ -1,77 +1,17 @@
 export interface IExtendFunction {
-  <TObject>(deep: boolean, object: TObject): TObject;
-  <TObject, TSource1>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
- ): TObject & TSource1;
-  <TObject, TSource1>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
- ): TObject & TSource1;
-  <TObject, TSource1, TSource2>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
- ): TObject & TSource1 & TSource2;
-  <TObject, TSource1, TSource2, TSource3>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
-   source3: TSource3,
- ): TObject & TSource1 & TSource2 & TSource3;
-  <TObject, TSource1, TSource2, TSource3>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
-   source3: TSource3,
- ): TObject & TSource1 & TSource2 & TSource3;
-  <TObject, TSource1, TSource2, TSource3, TSource4>(
-   deep: boolean,
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
-   source3: TSource3,
-   source4: TSource4,
- ): TObject & TSource1 & TSource2 & TSource3 & TSource4;
- (deep: boolean, ...args: object[]): object;
-  <TObject>(object: TObject): TObject;
-  <TObject, TSource1>(
-   object: TObject,
-   source1: TSource1,
- ): TObject & TSource1;
-  <TObject, TSource1>(
-   object: TObject,
-   source1: TSource1,
- ): TObject & TSource1;
-  <TObject, TSource1, TSource2>(
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
- ): TObject & TSource1 & TSource2;
-  <TObject, TSource1, TSource2, TSource3>(
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
-   source3: TSource3,
- ): TObject & TSource1 & TSource2 & TSource3;
-  <TObject, TSource1, TSource2, TSource3>(
-   object: TObject,
-   source1: TSource1,
-   source2: TSource2,
-   source3: TSource3,
- ): TObject & TSource1 & TSource2 & TSource3;
- <TObject, TSource1, TSource2, TSource3, TSource4>(
-     object: TObject,
-     source1: TSource1,
-     source2: TSource2,
-     source3: TSource3,
-     source4: TSource4,
- ): TObject & TSource1 & TSource2 & TSource3 & TSource4;
- (...args: object[]): object;
- (...args: any[]): object;
+  <T0>(deep: boolean, object: T0): T0;
+  <T0, T1>(deep: boolean, object: T0, source1: T1): T0 & T1;
+  <T0, T1>(deep: boolean, object: T0, source1: T1): T0 & T1;
+  <T0, T1, T2>(deep: boolean, object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+  <T0, T1, T2, T3>(deep: boolean, object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+  <T0, T1, T2, T3>(deep: boolean, object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+  (deep: boolean, ...args: object[]): object;
+  <T0>(object: T0): T0;
+  <T0, T1>(object: T0, source1: T1): T0 & T1;
+  <T0, T1>(object: T0, source1: T1): T0 & T1;
+  <T0, T1, T2>(object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+  <T0, T1, T2, T3>(object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+  <T0, T1, T2, T3>(object: T0, source1: T1, source2: T2, source3: T3): T0 & T1 & T2 & T3;
+  (...args: object[]): object;
+  (...args: any[]): object;
 }

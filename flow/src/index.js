@@ -20,11 +20,15 @@ function isPlainObject(obj: any): boolean {
     prototype === Object.prototype;
 }
 
-declare function extend<T1, T2, T3>(arg0: T1, arg1: T2, arg2: T3): T1 & T2 & T3;
-declare function extend<T1, T2, T3>(arg0: boolean, arg1: T1, arg2: T2, arg3: T3): T1 & T2 & T3;
-declare function extend<T1, T2>(arg0: T1, arg1: T2): T1 & T2;
-declare function extend<T1, T2>(arg0: boolean, arg1: T1, arg2: T2): T1 & T2;
-declare function extend(arg0: boolean | Object, ...args: Object[]): Object;
+declare function extendInternal<T0>(deep: boolean, object: T0): T0;
+declare function extendInternal<T0, T1>(deep: boolean, object: T0, source1: T1): T0 & T1;
+declare function extendInternal<T0, T1, T2>(deep: boolean, object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+declare function extendInternal(deep: boolean, ...args: Object[]): Object;
+declare function extendInternal<T0>(object: T0): T0;
+declare function extendInternal<T0, T1>(object: T0, source1: T1): T0 & T1;
+declare function extendInternal<T0, T1, T2>(object: T0, source1: T1, source2: T2): T0 & T1 & T2;
+declare function extendInternal(...args: Object[]): Object;
+declare function extendInternal(deep: boolean | Object, ...args: Object[]): Object;
 
 /**
  * Копирует перечислимые свойства одного или нескольких объектов в целевой объект.
@@ -35,7 +39,8 @@ declare function extend(arg0: boolean | Object, ...args: Object[]): Object;
  *      `null` или `undefined` игнорируются.
  * @returns {Object}
  */
-function extend(arg0: boolean | Object, ...args: Object[]): Object {
+const extend = extendInternal;
+function extendInternal(arg0: boolean | Object, ...args: Object[]): Object {
   let target: Object;
   let deep: boolean;
   let i: number;
@@ -71,7 +76,7 @@ function extend(arg0: boolean | Object, ...args: Object[]): Object {
           } else {
             clone = src && isPlainObject(src) ? src : {};
           }
-          target[key] = extend(deep, clone, val);
+          target[key] = extendInternal(deep, clone, val);
         } else {
           target[key] = val;
         }
