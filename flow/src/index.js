@@ -1,7 +1,7 @@
 // @flow
 
-const hasOwnProperty: (prop: string) => boolean = Object.prototype.hasOwnProperty;
-const toString: (obj: any) => string = Object.prototype.toString;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const toString = Object.prototype.toString;
 
 /**
  * Проверяет, что переданный объект является "плоским" (т.е. созданным с помощью "{}"
@@ -14,14 +14,17 @@ function isPlainObject(obj: any): boolean {
   if (toString.call(obj) !== '[object Object]') {
     return false;
   }
-  const prototype: Object = Object.getPrototypeOf(obj);
+
+  const prototype = Object.getPrototypeOf(obj);
   return prototype === null ||
     prototype === Object.prototype;
 }
 
-type ExtendFunctionType =
-  & ((...Object[]) => Object)
-  & ((boolean, ...Object[]) => Object);
+declare function extend<T1, T2, T3>(arg0: T1, arg1: T2, arg2: T3): T1 & T2 & T3;
+declare function extend<T1, T2, T3>(arg0: boolean, arg1: T1, arg2: T2, arg3: T3): T1 & T2 & T3;
+declare function extend<T1, T2>(arg0: T1, arg1: T2): T1 & T2;
+declare function extend<T1, T2>(arg0: boolean, arg1: T1, arg2: T2): T1 & T2;
+declare function extend(arg0: boolean | Object, ...args: Object[]): Object;
 
 /**
  * Копирует перечислимые свойства одного или нескольких объектов в целевой объект.
@@ -32,8 +35,7 @@ type ExtendFunctionType =
  *      `null` или `undefined` игнорируются.
  * @returns {Object}
  */
-const extend: ExtendFunctionType =
-  function extend(arg0: boolean | Object, ...args: Object[]) {
+function extend(arg0: boolean | Object, ...args: Object[]): Object {
   let target: Object;
   let deep: boolean;
   let i: number;
@@ -77,4 +79,4 @@ const extend: ExtendFunctionType =
     }
   }
   return target;
-};
+}
